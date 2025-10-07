@@ -1,0 +1,136 @@
+
+# === TEST ===
+if __name__ == "__main__":
+
+    output_path = "/home/bpacioianu/Documents/Vscode_Environment_Project/ETL_API_Spotyfy/data/raw/spotify/genre"
+     
+    artists = [
+    "The Beatles", "The Rolling Stones", "Led Zeppelin", "Pink Floyd", "Queen", 
+    "Michael Jackson", "Madonna", "Prince", "David Bowie", "Bob Dylan", 
+    "Elvis Presley", "Frank Sinatra", "Aretha Franklin", "Stevie Wonder", "James Brown", 
+    "Jimi Hendrix", "Nirvana", "Radiohead", "U2", "Metallica", 
+    "AC/DC", "Guns N' Roses", "Eminem", "Drake", "Jay-Z", 
+    "Kanye West", "Beyoncé", "Taylor Swift", "Rihanna", "Adele", 
+    "Lady Gaga", "Bruno Mars", "Ed Sheeran", "The Weeknd", "Daft Punk", 
+    "Kraftwerk", "Bob Marley", "Johnny Cash", "Dolly Parton", "Whitney Houston", 
+    "Mariah Carey", "Tupac Shakur", "The Notorious B.I.G.", "Kendrick Lamar", "Frank Ocean", 
+    "Amy Winehouse", "Red Hot Chili Peppers", "Foo Fighters", "Green Day", "Oasis", 
+    "Blur", "The Smiths", "The Cure", "R.E.M.", "Pearl Jam", 
+    "Soundgarden", "Alice in Chains", "The Doors", "The Who", "Bruce Springsteen", 
+    "Tom Petty", "Neil Young", "Fleetwood Mac", "Eagles", "ABBA", 
+    "Bee Gees", "Marvin Gaye", "Ray Charles", "B.B. King", "Miles Davis", 
+    "John Coltrane", "Louis Armstrong", "Duke Ellington", "Ella Fitzgerald", "Nina Simone", 
+    "Nas", "Wu-Tang Clan", "A Tribe Called Quest", "OutKast", "Dr. Dre", 
+    "Snoop Dogg", "N.W.A.", "Public Enemy", "Run-DMC", "Beastie Boys", 
+    "Lauryn Hill", "Missy Elliott", "J. Cole", "Travis Scott", "Arctic Monkeys", 
+    "The Killers", "Coldplay", "Muse", "Arcade Fire", "The Strokes", 
+    "Vampire Weekend", "Tame Impala", "Florence + The Machine", "Lorde", "Billie Eilish", 
+    "Lana Del Rey", "Justin Timberlake", "Usher", "Alicia Keys", "John Legend", 
+    "Sam Smith", "Lizzo", "SZA", "Mary J. Blige", "D'Angelo", 
+    "Erykah Badu", "Janet Jackson", "Diana Ross", "The Supremes", "The Temptations", 
+    "Four Tops", "The Beach Boys", "Simon & Garfunkel", "Crosby, Stills, Nash & Young", "The Grateful Dead", 
+    "Black Sabbath", "Iron Maiden", "Judas Priest", "Motörhead", "Slayer", 
+    "Megadeth", "Pantera", "System of a Down", "Korn", "Linkin Park", 
+    "Depeche Mode", "New Order", "Joy Division", "Talking Heads", "Blondie", 
+    "Ramones", "The Clash", "Sex Pistols", "Iggy Pop", "Lou Reed", 
+    "The Velvet Underground", "Björk", "Massive Attack", "Portishead", "Tricky", 
+    "The Chemical Brothers", "The Prodigy", "Aphex Twin", "LCD Soundsystem", "Gorillaz", 
+    "Moby", "Fatboy Slim", "Skrillex", "Deadmau5", "Calvin Harris", 
+    "Avicii", "Swedish House Mafia", "Tiësto", "Armin van Buuren", "Paul van Dyk", 
+    "Carl Cox", "Richie Hawtin", "Jeff Mills", "Frankie Knuckles", "Larry Levan", 
+    "Giorgio Moroder", "Donna Summer", "Chic", "Earth, Wind & Fire", "Kool & The Gang", 
+    "Parliament-Funkadelic", "Sly and the Family Stone", "Curtis Mayfield", "Isaac Hayes", "Al Green", 
+    "Otis Redding", "Sam Cooke", "Etta James", "Muddy Waters", "Howlin' Wolf", 
+    "John Lee Hooker", "Robert Johnson", "Chuck Berry", "Little Richard", "Jerry Lee Lewis", 
+    "Buddy Holly", "Roy Orbison", "The Everly Brothers", "Johnny Hallyday", "Serge Gainsbourg", 
+    "Charles Aznavour", "Edith Piaf", "Jacques Brel", "Buena Vista Social Club", "Fela Kuti", 
+    "King Sunny Adé", "Toots and the Maytals", "Peter Tosh", "Jimmy Cliff", "Burning Spear", 
+    "Steel Pulse", "UB40", "Shaggy", "Sean Paul", "Damian Marley", 
+    "Manu Chao", "Hector Lavoe", "Celia Cruz", "Tito Puente", "Willie Colón", 
+    "Rubén Blades", "Santana", "Shakira", "Ricky Martin", "Enrique Iglesias", 
+    "Jennifer Lopez", "Marc Anthony", "Daddy Yankee", "Bad Bunny", "J Balvin", 
+    "Rosalía", "Lil Wayne", "Tyler, the Creator", "MF DOOM", "Post Malone", 
+    "Cardi B", "Nicki Minaj", "Megan Thee Stallion", "Doja Cat", "Lil Nas X", 
+    "Chance the Rapper", "Anderson .Paak", "Mac Miller", "Kid Cudi", "A$AP Rocky", 
+    "Migos", "Future", "Young Thug", "21 Savage", "Pusha T", 
+    "Ghostface Killah", "Raekwon", "GZA", "Ol' Dirty Bastard", "Method Man", 
+    "Redman", "Busta Rhymes", "Q-Tip", "Phife Dawg", "Mos Def", 
+    "Talib Kweli", "Common", "The Roots", "Cypress Hill", "House of Pain", 
+    "Ice Cube", "Eazy-E", "Ice-T", "KRS-One", "Big Daddy Kane", 
+    "Eric B. & Rakim", "Slick Rick", "LL Cool J", "Salt-N-Pepa", "Queen Latifah", 
+    "MC Lyte", "Roxanne Shanté", "Grandmaster Flash and the Furious Five", "The Sugarhill Gang", "Afrika Bambaataa", 
+    "Kurtis Blow", "Herbie Hancock", "Thelonious Monk", "Charlie Parker", "Dizzy Gillespie", 
+    "Chet Baker", "Dave Brubeck", "Weather Report", "Jaco Pastorius", "Stanley Clarke", 
+    "George Benson", "Wes Montgomery", "Django Reinhardt", "Stéphane Grappelli", "Norah Jones", 
+    "Diana Krall", "Michael Bublé", "Harry Connick Jr.", "Tony Bennett", "Barbra Streisand", 
+    "Céline Dion", "Andrea Bocelli", "Luciano Pavarotti", "Plácido Domingo", "José Carreras", 
+    "Maria Callas", "Renée Fleming", "Yo-Yo Ma", "Itzhak Perlman", "Lang Lang", 
+    "Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Frédéric Chopin", "Franz Liszt", 
+    "Pyotr Ilyich Tchaikovsky", "Antonio Vivaldi", "George Frideric Handel", "Igor Stravinsky", "Leonard Bernstein", 
+    "John Williams", "Hans Zimmer", "Ennio Morricone", "Philip Glass", "Steve Reich", 
+    "John Cage", "Brian Eno", "Vangelis", "Jean-Michel Jarre", "Enya", 
+    "Clannad", "The Cranberries", "Sinéad O'Connor", "Eurythmics", "Annie Lennox", 
+    "Tears for Fears", "Simple Minds", "Duran Duran", "Spandau Ballet", "The Human League", 
+    "Culture Club", "Wham!", "George Michael", "Elton John", "Billy Joel", 
+    "Rod Stewart", "Phil Collins", "Peter Gabriel", "Sting", "The Police", 
+    "Genesis", "Yes", "King Crimson", "Jethro Tull", "Rush", 
+    "Dire Straits", "Steely Dan", "The Allman Brothers Band", "Lynyrd Skynyrd", "Creedence Clearwater Revival", 
+    "Tom Waits", "Leonard Cohen", "Nick Cave", "Jeff Buckley", "Elliott Smith", 
+    "Bon Iver", "Sufjan Stevens", "The National", "Bon Jovi", "Def Leppard", 
+    "Mötley Crüe", "Poison", "Aerosmith", "Van Halen", "KISS", 
+    "Journey", "Foreigner", "Boston", "Chicago", "Toto", 
+    "Supertramp", "Electric Light Orchestra", "Bryan Adams", "Alanis Morissette", "Sheryl Crow", 
+    "No Doubt", "Garbage", "The White Stripes", "Beck", "Weezer", 
+    "The Smashing Pumpkins", "Jane's Addiction", "Rage Against the Machine", "Tool", "A Perfect Circle", 
+    "Nine Inch Nails", "Marilyn Manson", "Rammstein", "Sigur Rós", "Cocteau Twins", 
+    "My Bloody Valentine", "Pixies", "Sonic Youth", "Pavement", "Guided by Voices", 
+    "Frank Zappa", "Captain Beefheart", "Roxy Music", "Sparks", "Kate Bush"
+]
+    all_artists_data = [] # 1. Initialize an empty list to hold all artist data
+
+    token = SpotifyAuth.get_token()
+    for artist_name in artists:
+        print(f"Searching for artist: {artist_name}")
+        # The API returns a list, e.g., [{'name': 'Drake', ...}]
+        artist_list = SpotifyAuth.search_for_artist(token, artist_name)
+        
+        # 2. Check if the API found the artist before adding to the list
+        if artist_list:
+            # Use extend to add all items from the returned list (usually just one)
+            all_artists_data.extend(artist_list) 
+            print(f"  ... Found {artist_list[0].get('name')}")
+        else:
+            print(f"  ... Artist '{artist_name}' not found.")
+
+    # 3. After the loop, create ONE DataFrame from the collected data
+    if all_artists_data:
+        df = spark.createDataFrame(all_artists_data)
+
+        # 4. Now, perform the transformations on the complete DataFrame
+        df_exploded = df.withColumn("genre", explode("genres")) \
+                        .withColumn("image_info", explode("images"))
+
+        df_final = df_exploded.select(
+            col("id"),
+            col("name"),
+            col("popularity"),
+            col("type"),
+            col("genre"),
+            col("followers.total").alias("followers"),
+            col("external_urls.spotify").alias("spotify_url"),
+            col("image_info.url").alias("image_url"),
+            col("image_info.height").alias("image_height"),
+            col("image_info.width").alias("image_width")
+        )
+
+        print("\n--- Final Combined DataFrame ---")
+        df_final.show()
+        print("...Write to CSV...")
+        df_final.write.format("csv").option("header", "true").mode("overwrite").save(output_path)
+        df = spark.read.format("csv").option("header", "true").load(output_path)
+        print("...Done.")
+    else:
+        print("\nNo artist data was collected. Final DataFrame is empty.")
+    df = spark.read.format("csv").option("header", "true").load(output_path)
+    df.write.format("parquet").partitionBy("genre").mode("overwrite").save("/home/bpacioianu/Documents/Vscode_Environment_Project/ETL_API_Spotyfy/data/curated/spotify/genre/")
+    df.show()
